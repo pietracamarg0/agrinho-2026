@@ -1,0 +1,294 @@
+/* VARIÁVEIS DE CORES E FONTES (MEMPHIS) */
+:root {
+    --bg-creme: #FAF7F2;
+    --menta: #A3E4D7;
+    --terracota: #E07A5F;
+    --dark: #2D3142;
+    --white: #FFFFFF;
+    --font-titles: 'Nunito', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+body {
+    background-color: var(--bg-creme);
+    color: var(--dark);
+    padding-bottom: 80px; /* Espaço para a nav inferior */
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* FORMATOS GEOMÉTRICOS MEMPHIS */
+.memphis-shape {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.15;
+}
+.circle-1 {
+    width: 150px;
+    height: 150px;
+    background-color: var(--terracota);
+    border-radius: 50%;
+    top: 10%;
+    right: -50px;
+}
+.triangle-1 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid var(--dark);
+    top: 60%;
+    left: -20px;
+    transform: rotate(25deg);
+}
+.badge-1 {
+    width: 80px;
+    height: 80px;
+    background-color: var(--menta);
+    border: 4px solid var(--dark);
+    top: 40%;
+    right: 15%;
+    transform: rotate(-15deg);
+}
+
+/* HEADER GLOBAL */
+.global-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--white);
+    border-bottom: 4px solid var(--dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo {
+    font-family: var(--font-titles);
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+.logo span {
+    color: var(--terracota);
+}
+.score-badge {
+    background-color: var(--menta);
+    border: 3px solid var(--dark);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-family: var(--font-titles);
+    font-weight: 700;
+    box-shadow: 4px 4px 0px var(--dark);
+}
+
+/* COMPORTAMENTO DE ABAS */
+.tab-content {
+    display: none;
+    padding: 25px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* HERO E CARROSSEL (HOME) */
+.hero h1 {
+    font-family: var(--font-titles);
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+.carousel-container {
+    background-color: var(--white);
+    border: 4px solid var(--dark);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 6px 6px 0px var(--dark);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
+.carousel-slide {
+    display: none;
+    font-weight: 600;
+}
+.carousel-slide.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* TEASERS GRID */
+.teaser-grid {
+    display: grid;
+    gap: 15px;
+}
+.teaser-card {
+    border: 4px solid var(--dark);
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--dark);
+    transition: transform 0.1s;
+}
+.teaser-card:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px var(--dark);
+}
+.teaser-card h3 { font-family: var(--font-titles); margin-bottom: 5px;}
+.card-menta { background-color: var(--menta); }
+.card-terracota { background-color: var(--terracota); color: var(--white); }
+.card-creme { background-color: var(--white); }
+
+/* SUSTENTABILIDADE 101 */
+.section-header h2 { font-family: var(--font-titles); font-size: 2rem; margin-bottom: 10px; }
+.highlight-text {
+    background-color: var(--menta);
+    padding: 15px;
+    border-left: 6px solid var(--dark);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.tripe-container {
+    display: grid;
+    gap: 15px;
+}
+.tripe-card {
+    background-color: var(--white);
+    border: 4px solid var(--dark);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px var(--dark);
+}
+.card-front {
+    font-family: var(--font-titles);
+    font-size: 1.3rem;
+}
+.card-back {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    border-top: 2px dashed var(--dark);
+    padding-top: 10px;
+}
+.tripe-card.expanded .card-back {
+    display: block;
+}
+
+/* ACCORDION (5 RS) */
+.accordion-item {
+    background-color: var(--white);
+    border: 3px solid var(--dark);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 4px 4px 0px var(--dark);
+}
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-family: var(--font-titles);
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    color: var(--dark);
+}
+.accordion-body {
+    display: none;
+    padding: 15px;
+    background-color: #FFF;
+    border-top: 3px solid var(--dark);
+    line-height: 1.5;
+}
+.accordion-item.open .accordion-body { display: block; }
+
+/* DESAFIOS ECO-SEMANAIS */
+.challenge-item {
+    background-color: var(--white);
+    border: 4px solid var(--dark);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 0px var(--dark);
+}
+.challenge-info h3 { font-family: var(--font-titles); margin-bottom: 4px; }
+.challenge-info p { font-size: 0.9rem; padding-right: 10px; }
+.btn-complete {
+    background-color: var(--terracota);
+    color: var(--white);
+    border: 3px solid var(--dark);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: var(--font-titles);
+    cursor: pointer;
+    box-shadow: 3px 3px 0px var(--dark);
+    white-space: nowrap;
+}
+.btn-complete:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--dark);
+}
+.challenge-item.done {
+    opacity: 0.6;
+    background-color: #EAEAEA;
+}
+.challenge-item.done .btn-complete {
+    background-color: #A0A0A0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* NAVEGAÇÃO INFERIOR STICKY */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    border-top: 4px solid var(--dark);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 100;
+}
+.nav-item {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: var(--font-titles);
+    color: #A0A0A0;
+}
+.nav-item span { font-size: 0.75rem; margin-top: 2px; font-weight: bold; }
+.nav-item.active {
+    color: var(--dark);
+    transform: scale(1.1);
+}

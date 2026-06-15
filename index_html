@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegada Verde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="memphis-shape circle-1"></div>
+    <div class="memphis-shape triangle-1"></div>
+    <div class="memphis-shape badge-1"></div>
+
+    <header class="global-header">
+        <div class="logo">🍃 Pegada<span>Verde</span></div>
+        <div class="score-badge">🌟 <span id="global-score">0</span> pts</div>
+    </header>
+
+    <main class="main-content">
+        
+        <section id="aba-home" class="tab-content active">
+            <div class="hero">
+                <h1>Pequenos hábitos,<br>grandes mudanças.</h1>
+                <p>Mude sua rotina, ganhe pontos e salve o planeta com micro-atitudes diárias.</p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide active">💡 Mais de 8 milhões de toneladas de plástico vão para os oceanos anualmente.</div>
+                    <div class="carousel-slide">🌍 Se todo mundo consumisse como o ocidente, precisaríamos de 3 planetas.</div>
+                    <div class="carousel-slide">🔋 Apagar luzes desnecessárias reduz em até 15% a sua conta de energia.</div>
+                </div>
+            </div>
+
+            <div class="teaser-grid">
+                <div class="teaser-card card-menta" onclick="switchTab('sustentabilidade')">
+                    <h3>Sustentabilidade 101</h3>
+                    <p>Descubra o tripé que sustenta o futuro do mundo. →</p>
+                </div>
+                <div class="teaser-card card-terracota" onclick="switchTab('os5rs')">
+                    <h3>Os 5 Rs</h3>
+                    <p>Repensar, Recusar, Reduzir, Reutilizar e Reciclar na prática. →</p>
+                </div>
+                <div class="teaser-card card-creme" onclick="switchTab('desafios')">
+                    <h3>Eco-Desafios</h3>
+                    <p>Complete as missões da semana e suba sua pontuação! →</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="aba-sustentabilidade" class="tab-content">
+            <div class="section-header">
+                <h2>Sustentabilidade 101</h2>
+                <p class="highlight-text">"Suprir as necessidades do presente sem esgotar os recursos das próximas gerações."</p>
+            </div>
+
+            <div class="tripe-container">
+                <div class="tripe-card" onclick="toggleTripe(this)">
+                    <div class="card-front">🌳 Ambiente</div>
+                    <div class="card-back">Preservação dos ecossistemas, uso consciente da água, redução da pegada de carbono e transição para energias limpas.</div>
+                </div>
+                <div class="tripe-card" onclick="toggleTripe(this)">
+                    <div class="card-front">👥 Social</div>
+                    <div class="card-back">Garantir que as comunidades tenham acesso à saúde, educação, igualdade de direitos e condições dignas de vida e trabalho.</div>
+                </div>
+                <div class="tripe-card" onclick="toggleTripe(this)">
+                    <div class="card-front">💰 Economia</div>
+                    <div class="card-back">Crescimento econômico justo que não destrua o planeta, estimulando a economia circular e o consumo consciente.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aba-os5rs" class="tab-content">
+            <div class="section-header">
+                <h2>O Guia dos 5 Rs</h2>
+                <p>Passos simples para reestruturar seu impacto no dia a dia.</p>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">1. Repensar <span>+</span></button>
+                    <div class="accordion-body">
+                        <p>Analise seus hábitos de consumo. Eu realmente preciso deste item ou estou comprando por impulso?</p>
+                        <strong>💡 Dica:</strong> Espere 24 horas antes de fechar uma compra online por impulso.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">2. Recusar <span>+</span></button>
+                    <div class="accordion-body">
+                        <p>Diga não a produtos que geram lixo desnecessário e poluem o meio ambiente, como plásticos de uso único.</p>
+                        <strong>💡 Dica:</strong> Recuse sacolas plásticas em lojas quando puder carregar o item na mão ou mochila.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">3. Reduzir <span>+</span></button>
+                    <div class="accordion-body">
+                        <p>Diminua a quantidade de lixo gerada e o desperdício de recursos naturais no cotidiano.</p>
+                        <strong>💡 Dica:</strong> Reduza o tempo de banho para 5 minutos. Isso economiza até 90 litros de água!
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">4. Reutilizar <span>+</span></button>
+                    <div class="accordion-body">
+                        <p>Dê uma nova utilidade a objetos que iriam para o lixo, aumentando a vida útil das coisas.</p>
+                        <strong>💡 Dica:</strong> Use potes de vidro de conservas para guardar temperos ou organizar sua mesa.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">5. Reciclar <span>+</span></button>
+                    <div class="accordion-body">
+                        <p>Transforme o resíduo descartado em matéria-prima para um novo produto através da coleta seletiva.</p>
+                        <strong>💡 Dica:</strong> Separe o lixo limpo (plástico, papel, metal) do lixo orgânico em sua casa.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aba-desafios" class="tab-content">
+            <div class="section-header">
+                <h2>Desafios da Semana</h2>
+                <p>Ganha pontos quem bota a mão na massa!</p>
+            </div>
+
+            <div class="challenges-list">
+                <div class="challenge-item" id="task-1">
+                    <div class="challenge-info">
+                        <h3>🔌 Desplugado</h3>
+                        <p>Tirei carregadores e eletrônicos da tomada que não estavam sendo usados hoje.</p>
+                    </div>
+                    <button class="btn-complete" onclick="completeChallenge('task-1', 15)">+15 pts</button>
+                </div>
+
+                <div class="challenge-item" id="task-2">
+                    <div class="challenge-info">
+                        <h3>🥤 Zero Descartável</h3>
+                        <p>Usei garrafa retornável ou caneca própria durante todo o dia de hoje.</p>
+                    </div>
+                    <button class="btn-complete" onclick="completeChallenge('task-2', 20)">+20 pts</button>
+                </div>
+
+                <div class="challenge-item" id="task-3">
+                    <div class="challenge-info">
+                        <h3>🚿 Banho Flash</h3>
+                        <p>Consegui tomar um banho rápido e eficiente de menos de 5 minutos.</p>
+                    </div>
+                    <button class="btn-complete" onclick="completeChallenge('task-3', 25)">+25 pts</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <button class="nav-item active" onclick="switchTab('home')">🏠 <span>Home</span></button>
+        <button class="nav-item" onclick="switchTab('sustentabilidade')">🍃 <span>101</span></button>
+        <button class="nav-item" onclick="switchTab('os5rs')">♻️ <span>5 Rs</span></button>
+        <button class="nav-item" onclick="switchTab('desafios')">🎮 <span>Desafios</span></button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
